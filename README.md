@@ -23,7 +23,7 @@ A production-ready machine learning application that predicts energy consumption
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
 ### Problem Statement
 Develop a predictive analytics system for energy consumption forecasting using historical AEP (American Electric Power) hourly data to enable better grid management, resource planning, and cost optimization.
@@ -44,7 +44,7 @@ A full-stack web application that:
 
 ---
 
-## 🎯 Features
+## Features
 
 ### Core Functionality
 - **Real-time Predictions**: Instant energy consumption forecasts for any date/time
@@ -70,7 +70,7 @@ The system uses **9 engineered features**:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 - **Framework**: Django 4.0+ (Minimal single-file architecture)
@@ -91,7 +91,7 @@ The system uses **9 engineered features**:
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 **Source**: AEP (American Electric Power) Hourly Energy Consumption
 
@@ -111,7 +111,7 @@ The system uses **9 engineered features**:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.8 or higher
@@ -161,7 +161,7 @@ http://127.0.0.1:8000/
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 ### Deploy to Render (Recommended)
 
@@ -177,7 +177,7 @@ http://127.0.0.1:8000/
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 energylogic/
@@ -204,7 +204,7 @@ energylogic/
 
 ---
 
-## 🎨 User Interface
+## User Interface
 
 ### Dashboard Sections
 
@@ -223,7 +223,7 @@ energylogic/
 
 ---
 
-## 📈 Model Performance
+## Model Performance
 
 ### Training Results
 
@@ -251,7 +251,7 @@ rolling_std_24     ██                    2.26%
 
 ---
 
-## 🔧 API Reference
+## API Reference
 
 ### Make Prediction
 
@@ -284,7 +284,7 @@ model_type=RandomForest
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ### Run Model Tests
 ```bash
@@ -307,7 +307,7 @@ python main.py runserver
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 | Document | Purpose |
 |----------|---------|
@@ -319,7 +319,7 @@ python main.py runserver
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 This is an internship project, but contributions are welcome!
 
@@ -331,13 +331,13 @@ This is an internship project, but contributions are welcome!
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **AEP** - For providing the hourly energy consumption dataset
 - **SHAP** - For explainable AI framework
@@ -347,7 +347,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 📞 Contact & Support
+## Contact & Support
 
 **Project Links**:
 - **Live Demo**: https://your-app.onrender.com
@@ -361,7 +361,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🎓 Internship Project Details
+## Internship Project Details
 
 **Developed By**: [Your Name]  
 **Organization**: [Company/Institution Name]  
@@ -385,16 +385,16 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 🗺️ Future Enhancements
+## Future Enhancements
 
-- [ ] Add LSTM/GRU models for deep learning time series
-- [ ] Implement real-time data streaming
-- [ ] Add weather data integration
-- [ ] Create REST API with authentication
-- [ ] Add automated model retraining
-- [ ] Implement A/B testing framework
-- [ ] Add Grafana dashboards
-- [ ] Mobile app (React Native)
+- Add LSTM/GRU models for deep learning time series
+- Implement real-time data streaming
+- Add weather data integration
+- Create REST API with authentication
+- Add automated model retraining
+- Implement A/B testing framework
+- Add Grafana dashboards
+- Mobile app (React Native)
 
 ---
 
@@ -412,8 +412,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 <div align="center">
 
 **Built with ❤️ for better energy management**
-
-⭐ Star this repo if you find it useful!
 
 **Internship Project - [2025]**
 
