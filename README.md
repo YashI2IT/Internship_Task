@@ -10,6 +10,15 @@
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Chart.js](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white)
 
+**A production-grade ML system for energy consumption forecasting with explainable AI and real-time analytics.**
+
+[Key Features](#-features) • [Tech Stack](#-tech-stack) • [Quick Start](#-quick-start) • [Models](#-ml-models) • [Deployment](#-deployment)
+
+![Dashboard Preview](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+
+</div>
+
 A production-ready machine learning application that predicts energy consumption (MW) using temporal patterns and advanced ensemble methods. Built with Django and powered by RandomForest, XGBoost, and Linear Regression models with SHAP-based explainability.
 
 ---
