@@ -589,11 +589,17 @@ def index(request):
             # Load specific model if requested
             if model_type != 'current':
                 try:
-                    model_path = f"{model_type}.joblib"
+                    model_path = f"models/{model_type}.joblib"
                     if os.path.exists(model_path):
                         global model, explainer
                         print(f"🔄 Switching to {model_type} model...")
                         
+                        # Check memory safety on Render
+                        if is_render and model_type == 'RandomForest':
+                             context['error'] = "Random Forest is disabled on Render Free tier to prevent crashes. Using XGBoost instead."
+                             model_type = 'XGBoost'
+                             model_path = "models/XGBoost.joblib"
+
                         # Load the requested model with error handling
                         try:
                             model = joblib.load(model_path)
@@ -611,13 +617,15 @@ def index(request):
                             context['model_info'] = f"Using {model_type} model"
                             
                         except MemoryError:
-                            context['error'] = f"{model_type} model is too large for available memory. Using current model."
+                            context['error'] = f"{model_type} model is too large for available memory. Using XGBoost."
                             print(f"❌ Memory error loading {model_type}")
                         except Exception as e:
                             context['error'] = f"Failed to load {model_type} model: {str(e)}. Using current model."
                             print(f"❌ Error loading {model_type}: {e}")
                     else:
-                        context['error'] = f"{model_type} model file not found. Using current model."
+                        # Silently skip warning if it's RandomForest on Render
+                        if not (is_render and model_type == 'RandomForest'):
+                             context['error'] = f"{model_type} model file not found. Using current model."
                 except Exception as e:
                     context['error'] = f"Failed to load {model_type} model: {str(e)}. Using current model."
             
