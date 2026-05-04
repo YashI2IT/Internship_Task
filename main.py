@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
+from django.core.wsgi import get_wsgi_application
 import pandas as pd
 import numpy as np
 import joblib
@@ -28,14 +29,16 @@ warnings.filterwarnings('ignore')
 
 # Configure Django settings (minimal - no database models)
 if not settings.configured:
-    # Check if running on AWS
+    # Check if running on AWS or Render
     is_aws = os.environ.get('AWS_DEPLOYMENT', False)
+    is_render = os.environ.get('RENDER', False)
+    is_deployment = is_aws or is_render
     
     settings.configure(
-        DEBUG=os.environ.get('DEBUG', str(not is_aws)) == 'True',
-        SECRET_KEY=os.environ['SECRET_KEY'],
+        DEBUG=os.environ.get('DEBUG', str(not is_deployment)) == 'True',
+        SECRET_KEY=os.environ.get('SECRET_KEY', 'fallback-secret-key-for-local-dev'),
         ROOT_URLCONF=__name__,
-        ALLOWED_HOSTS=['*'] if is_aws else ['127.0.0.1', 'localhost'],
+        ALLOWED_HOSTS=['*'] if is_deployment else ['127.0.0.1', 'localhost'],
         TEMPLATES=[
             {
                 'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -53,6 +56,7 @@ if not settings.configured:
         ],
         MIDDLEWARE=[
             'django.middleware.security.SecurityMiddleware',
+            'whitenoise.middleware.WhiteNoiseMiddleware',
             'django.contrib.sessions.middleware.SessionMiddleware',
             'django.middleware.common.CommonMiddleware',
             'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,6 +78,9 @@ if not settings.configured:
     )
 
 django.setup()
+
+# Expose WSGI application for Gunicorn
+application = get_wsgi_application()
 
 # MySQL Configuration - AWS Ready
 MYSQL_CONFIG = {
@@ -224,6 +231,9 @@ def load_model_and_setup_shap():
     global model, explainer, feature_names
     
     try:
+        # Check environment
+        is_render = os.environ.get('RENDER', False)
+        
         # Try to load models from your Colab notebook
         # Priority: RandomForest > XGBoost > LinearRegression
         model_paths = [
@@ -231,6 +241,11 @@ def load_model_and_setup_shap():
             ('models/XGBoost.joblib', 'XGBoost'), 
             ('models/LinearRegression.joblib', 'LinearRegression')
         ]
+        
+        # On Render Free tier, skip RandomForest to avoid OOM
+        if is_render:
+             print("🚀 Running on Render - skipping heavy RandomForest model to save memory")
+             model_paths = [p for p in model_paths if p[1] != 'RandomForest']
         
         model_loaded = False
         for model_path, model_name in model_paths:
