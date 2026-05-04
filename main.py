@@ -91,12 +91,6 @@ MYSQL_CONFIG = {
     'port': int(os.environ.get('RDS_PORT', '3306'))
 }
 
-# Initialize the app (setup tables, load models)
-try:
-    initialize_app()
-except Exception as e:
-    print(f"⚠️ App initialization warning: {e}")
-
 # Global variables for model and explainer
 model = None
 explainer = None
@@ -860,6 +854,12 @@ def initialize_app():
     print("="*60)
     print("📍 Server will start at: http://127.0.0.1:8000/")
     print("="*60 + "\n")
+
+# Initialize the app on startup (for Gunicorn/WSGI)
+try:
+    initialize_app()
+except Exception as e:
+    print(f"⚠️ App initialization warning: {e}")
 
 if __name__ == '__main__':
     initialize_app()
