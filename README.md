@@ -1,6 +1,14 @@
-# ⚡ EnergyLogic - AI-Powered Energy Consumption Forecasting
+# EnergyLogic - AI-Powered Energy Consumption Forecasting
 
 **Internship Project: Predictive Analytics for Energy Consumption Forecasting**
+
+<div align="center">
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Chart.js](https://img.shields.io/badge/chart.js-F5788D.svg?style=for-the-badge&logo=chart.js&logoColor=white)
 
 A production-ready machine learning application that predicts energy consumption (MW) using temporal patterns and advanced ensemble methods. Built with Django and powered by RandomForest, XGBoost, and Linear Regression models with SHAP-based explainability.
 
