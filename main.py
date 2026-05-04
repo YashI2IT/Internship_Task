@@ -82,6 +82,12 @@ django.setup()
 # Expose WSGI application for Gunicorn
 application = get_wsgi_application()
 
+# Initialize the app (setup tables, load models)
+try:
+    initialize_app()
+except Exception as e:
+    print(f"⚠️ App initialization warning: {e}")
+
 # MySQL Configuration - AWS Ready
 MYSQL_CONFIG = {
     'host': os.environ.get('RDS_HOSTNAME', 'localhost'),
