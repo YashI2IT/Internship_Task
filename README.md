@@ -398,7 +398,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 📊 Project Statistics
+## Project Statistics
 
 - **Lines of Code**: ~2,000+
 - **Models Trained**: 3 (RandomForest, XGBoost, LinearRegression)
