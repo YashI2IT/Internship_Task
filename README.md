@@ -329,7 +329,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Internship Project Details
 
-**Developed By**: Yash Borade  
+**Developed By**: Yash Borade | Medha Karadiguddi | Sai Subhransu Dash | Krushna Sonar
 **Organization**: Bharat Software Solutions 
 **Duration**: 20th Aug 2025 - 25th Oct 2025  
 **Supervisor**: Yogesh Murumkar
