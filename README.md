@@ -161,22 +161,6 @@ http://127.0.0.1:8000/
 
 ---
 
-## Deployment
-
-### Deploy to Render (Recommended)
-
-**Quick Deploy**: Follow `QUICKSTART.md` for 10-minute deployment
-
-**Detailed Guide**: See `DEPLOY.md` for complete instructions
-
-**What you get**:
-- Live URL: `https://your-app.onrender.com`
-- MySQL database (1 GB free)
-- Auto-deploy from GitHub
-- HTTPS enabled
-
----
-
 ## Project Structure
 
 ```
@@ -195,11 +179,7 @@ energylogic/
 ├── build.sh                   # Render build script
 ├── start.sh                   # Render start script
 ├── train_models.py            # Model training script
-└── Documentation/
-    ├── QUICKSTART.md          # 10-minute deploy guide
-    ├── DEPLOY.md              # Full deployment guide
-    ├── CHECKLIST.md           # Deployment checklist
-    └── PROJECT_STRUCTURE.md   # Detailed file descriptions
+
 ```
 
 ---
@@ -305,20 +285,6 @@ export AWS_DEPLOYMENT=False
 python main.py runserver
 ```
 
----
-
-## Documentation
-
-| Document | Purpose |
-|----------|---------|
-| `START_HERE.md` | Choose your deployment path |
-| `QUICKSTART.md` | Deploy in 10 minutes |
-| `DEPLOY.md` | Complete deployment guide |
-| `CHECKLIST.md` | Step-by-step deployment checklist |
-| `PROJECT_STRUCTURE.md` | Detailed file descriptions |
-
----
-
 ## Contributing
 
 This is an internship project, but contributions are welcome!
@@ -344,15 +310,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - **scikit-learn** - For machine learning algorithms
 - **Django** - For the web framework
 - **Render** - For hosting platform
+- **Database** - For hosting mysql database
 
 ---
 
 ## Contact & Support
 
 **Project Links**:
-- **Live Demo**: https://your-app.onrender.com
-- **GitHub**: https://github.com/yourusername/energylogic
-- **Colab Notebook**: https://colab.research.google.com/drive/1WTW3W8QAdFnHVQ_Yktg1J_yxpDYiiCLN
+- **Live Demo**: https://energy-price-prediction.onrender.com
+- **GitHub**: [https://github.com/yourusername/energylogic](https://github.com/YashI2IT/Bharat-Software-Solutions-Internship-Task-2)
 
 **For Issues**:
 - Open an issue on GitHub
@@ -363,16 +329,17 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Internship Project Details
 
-**Developed By**: [Your Name]  
-**Organization**: [Company/Institution Name]  
-**Duration**: [Start Date] - [End Date]  
-**Supervisor**: [Supervisor Name]
+**Developed By**: Yash Borade  
+**Organization**: Bharat Software Solutions 
+**Duration**: 20th Aug 2025 - 25th Oct 2025  
+**Supervisor**: Yogesh Murumkar
 
 **Learning Outcomes**:
 - Full-stack web development with Django
 - Machine learning model training and deployment
 - Database design and management
 - Cloud deployment (Render)
+- Database deployment (Aiven)
 - API development and documentation
 - UI/UX design principles
 
